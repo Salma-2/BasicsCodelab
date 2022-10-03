@@ -15,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.salma.basicscodelab.ui.theme.BasicsCodelabTheme
 import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 
@@ -43,7 +44,7 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun Greeting(name: String) {
-        val expanded = remember {
+        val expanded = rememberSaveable {
             mutableStateOf(false)
         }
         val extraPadding = if (expanded.value) 48.dp else 0.dp
@@ -93,7 +94,7 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     private fun MyApp() {
-        var shouldShowOnBoarding by remember {
+        var shouldShowOnBoarding by rememberSaveable {
             mutableStateOf(true)
         }
         if (shouldShowOnBoarding) {

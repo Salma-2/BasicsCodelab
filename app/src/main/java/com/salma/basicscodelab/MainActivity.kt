@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -28,12 +30,12 @@ class MainActivity : ComponentActivity() {
     }
 
     @Composable
-    fun GreetingsScreen(names: List<String> = listOf("World", "Compose")) {
+    fun GreetingsScreen(names: List<String> = List(1000) { "$it" }) {
         Surface(
             color = MaterialTheme.colors.background) {
-            Column(modifier = Modifier.padding(vertical = 4.dp)) {
-                for (name in names) {
-                    Greeting(name)
+            LazyColumn(modifier = Modifier.padding(vertical = 4.dp)) {
+                items(items = names) { name ->
+                    Greeting(name = name)
                 }
             }
         }
@@ -66,15 +68,17 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun OnBoardingScreen(onContinueClicked: () -> Unit) {
-        Column(modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text("Welcome to the Basics Codelab!")
-            Button(
-                modifier = Modifier.padding(24.dp),
-                onClick = onContinueClicked) {
-                Text(text = "Continue")
+        Surface {
+            Column(modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text("Welcome to the Basics Codelab!")
+                Button(
+                    modifier = Modifier.padding(24.dp),
+                    onClick = onContinueClicked) {
+                    Text(text = "Continue")
+                }
             }
         }
     }
@@ -83,7 +87,7 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun DefaultPreview() {
         BasicsCodelabTheme {
-            OnBoardingScreen(onContinueClicked = {})
+            GreetingsScreen()
         }
     }
 

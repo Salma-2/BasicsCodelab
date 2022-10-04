@@ -44,6 +44,9 @@ import com.codelab.basiclayouts.ui.theme.MySootheTheme
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Spa
 
 
 class MainActivity : ComponentActivity() {
@@ -222,7 +225,33 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 // Step: Bottom navigation - Material
 @Composable
 private fun SootheBottomNavigation(modifier: Modifier = Modifier) {
-    // Implement composable here
+    BottomNavigation(
+        modifier = modifier,
+        backgroundColor = MaterialTheme.colors.background
+        ) {
+        BottomNavigationItem(
+            selected = true,
+            onClick = { },
+            icon = {
+                Icon(imageVector = Icons.Default.Spa,
+                    contentDescription = null)
+            },
+            label = {
+                Text(text = stringResource(id = R.string.bottom_navigation_home))
+            }
+        )
+        BottomNavigationItem(
+            selected = false,
+            onClick = { },
+            icon = {
+                Icon(imageVector = Icons.Default.AccountCircle,
+                    contentDescription = null)
+            },
+            label = {
+                Text(text = stringResource(id = R.string.bottom_navigation_profile))
+            }
+        )
+    }
 }
 
 // Step: MySoothe App - Scaffold

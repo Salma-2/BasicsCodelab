@@ -16,14 +16,23 @@
 
 package com.codelab.basiclayouts
 
+import android.graphics.drawable.Icon
 import android.os.Bundle
+import android.provider.Settings.Global.getString
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.codelab.basiclayouts.ui.theme.MySootheTheme
@@ -36,17 +45,31 @@ class MainActivity : ComponentActivity() {
 }
 
 // Step: Search bar - Modifiers
+@Preview(name = "SearchBarPreview", widthDp = 320)
 @Composable
 fun SearchBar(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
-    // Implement composable here
+    TextField(
+        value = "",
+        onValueChange = {},
+        modifier = modifier
+            .heightIn(min = 56.dp)
+            .fillMaxWidth(),
+        leadingIcon = { Icon(Icons.Default.Search, null) },
+        placeholder = { Text(text = stringResource(R.string.placeholder_search)) },
+        colors = TextFieldDefaults.textFieldColors(
+            backgroundColor = MaterialTheme.colors.surface
+        )
+
+    )
+
 }
 
 // Step: Align your body - Alignment
 @Composable
 fun AlignYourBodyElement(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     // Implement composable here
 }
@@ -54,7 +77,7 @@ fun AlignYourBodyElement(
 // Step: Favorite collection card - Material Surface
 @Composable
 fun FavoriteCollectionCard(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     // Implement composable here
 }
@@ -62,7 +85,7 @@ fun FavoriteCollectionCard(
 // Step: Align your body row - Arrangements
 @Composable
 fun AlignYourBodyRow(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     // Implement composable here
 }
@@ -70,7 +93,7 @@ fun AlignYourBodyRow(
 // Step: Favorite collections grid - LazyGrid
 @Composable
 fun FavoriteCollectionsGrid(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     // Implement composable here
 }
@@ -78,7 +101,7 @@ fun FavoriteCollectionsGrid(
 // Step: Home section - Slot APIs
 @Composable
 fun HomeSection(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     // Implement composable here
 }
@@ -121,7 +144,7 @@ private val favoriteCollectionsData = listOf(
 
 private data class DrawableStringPair(
     @DrawableRes val drawable: Int,
-    @StringRes val text: Int
+    @StringRes val text: Int,
 )
 
 @Preview(showBackground = true, backgroundColor = 0xFFF0EAE2)

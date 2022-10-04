@@ -1,4 +1,7 @@
-# ComposeBasicsCodelab
+# Jetpack Compose Codelabs
+This repository contains a set of Android Studio projects about Compose in Android.
+
+## BasicsCodelab
 
  The fundamentals of declarative UI, working with state, layouts, and theming
  

@@ -15,7 +15,7 @@ Implementation of a real-world design with the composables and modifiers
 
 
 ## BasicStateCodelab
-This codelab is about state and events, how to extract stateless composables in Compose, and how Compose uses state updates to drive change in the UI.
+This codelab is about state and events, how to extract stateless composables in Compose, and how Compose
+uses state updates to drive change in the UI.
 
-<img src= "https://user-images.githubusercontent.com/48512714/194354873-fb9e97df-f660-4fe8-915b-7e44a120f9c0.png" width = 200>
-
+<img src= "https://user-images.githubusercontent.com/48512714/194355481-9564c10b-ecdb-435b-862c-d10939974ec9.png" width = 200>

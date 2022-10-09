@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 @Composable
 fun JetnewsTheme(content: @Composable () -> Unit) {
     MaterialTheme(
-        colors= LightColors,
+        colors = LightColors,
+        typography = JetnewsTypography,
         content = content)
 }

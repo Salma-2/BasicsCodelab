@@ -57,11 +57,6 @@ class PlantDetailFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentPlantDetailBinding>(
             inflater, R.layout.fragment_plant_detail, container, false
         ).apply {
-            composeView.setContent {
-                MaterialTheme() {
-                    PlantDetailDescription()
-                }
-            }
             viewModel = plantDetailViewModel
             lifecycleOwner = viewLifecycleOwner
             callback = object : Callback {
@@ -72,6 +67,11 @@ class PlantDetailFragment : Fragment() {
                         Snackbar.make(root, R.string.added_plant_to_garden, Snackbar.LENGTH_LONG)
                             .show()
                     }
+                }
+            }
+            composeView.setContent {
+                MaterialTheme() {
+                    PlantDetailDescription(plantDetailViewModel)
                 }
             }
 

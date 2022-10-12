@@ -19,3 +19,14 @@ This codelab is about state and events, how to extract stateless composables in 
 uses state updates to drive change in the UI.
 
 <img src= "https://user-images.githubusercontent.com/48512714/194355481-9564c10b-ecdb-435b-862c-d10939974ec9.png" width = 200>
+
+## Theming codelab
+Go hands on with Compose’s implementation of Material Design to understand how to theme an application’s colors, typography and shapes and support light and dark themes.
+
+<p float = "left">
+<img src="https://user-images.githubusercontent.com/48512714/194753144-e5ecb581-ce48-4d34-9b04-932d17fe77fe.png" width =200>
+<img src="https://user-images.githubusercontent.com/48512714/194753146-87e0b1af-2d1a-406a-bbd4-e36e2af0e626.png" width =200>
+</p>
+
+
+
